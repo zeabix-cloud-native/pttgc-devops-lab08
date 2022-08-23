@@ -50,7 +50,8 @@ Reference : https://docs.microsoft.com/en-us/azure/cloud-shell/overview
   ```console
  az ad sp create-for-rbac \
   --scope $groupId \
-  --role Contributor
+  --role Contributor \
+  --sdk-auth
   ```
  
  <img width="586" alt="Screen Shot 2565-08-23 at 19 42 47" src="https://user-images.githubusercontent.com/46469458/186161467-25d265c0-9bb4-43bc-970a-298e67ee2c26.png">
