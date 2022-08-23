@@ -10,6 +10,11 @@ jobs:
     name: Login
     runs-on: ubuntu-latest
     steps:
+      - name: Sample Azure action
+        with: # Set Azure credentials secret as an input
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        env: # Or as an environment variable
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
       - name: 'Azure CLI Login'
         uses: azure/login@v1
         with:
