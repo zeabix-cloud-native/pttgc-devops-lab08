@@ -45,7 +45,7 @@ Reference : https://docs.microsoft.com/en-us/azure/cloud-shell/overview
    --query id --output tsv)
  ```
 
-5. Second command to login to ACR. create the service principal (Copy JSON result from this step to create AZURE_CREDENTIALS please step 8.)
+5. Second command to login to ACR. create the service principal (Copy JSON result from this step to create AZURE_CREDENTIALS please see detail in step 8.)
  
   ```console
  az ad sp create-for-rbac \
