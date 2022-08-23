@@ -19,5 +19,6 @@ https://azure.microsoft.com/en-us/get-started/azure-portal/
 <img width="711" alt="Screen Shot 2565-08-22 at 21 19 41" src="https://user-images.githubusercontent.com/46469458/185949667-96a3849d-d911-459c-8fce-c9293cc981f0.png">
 10. When create completed you can click Go to resource to view your ACR 
 <img width="1512" alt="Screen Shot 2565-08-22 at 21 20 02" src="https://user-images.githubusercontent.com/46469458/185950475-6b3c9a1e-24cd-4455-a05e-adf14f01f3bc.png">
-11. Done!
+11. Create ACR done!!!
 <img width="1512" alt="Screen Shot 2565-08-22 at 21 20 39" src="https://user-images.githubusercontent.com/46469458/185950792-f779221a-5a1e-4e44-a7f1-c04a556328d8.png">
+12. Login 
