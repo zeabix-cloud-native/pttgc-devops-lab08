@@ -1,6 +1,6 @@
-How to create Azure Container Registry (ACR)
+#How to create Azure Container Registry (ACR)
 1. Login Azure Portal by Microsoft Account 
-https://azure.microsoft.com/en-us/get-started/azure-portal/
+[Azure_Portal](https://azure.microsoft.com/en-us/get-started/azure-portal/)
 2. At search bar type "container registries" then click "Container registries"
 <img width="1130" alt="Screen Shot 2565-08-22 at 21 29 36" src="https://user-images.githubusercontent.com/46469458/185946603-c676e3b9-3b33-413a-bbf3-4bce7cfe3de3.png">
 3. Click "Create"
@@ -21,33 +21,61 @@ https://azure.microsoft.com/en-us/get-started/azure-portal/
 <img width="1512" alt="Screen Shot 2565-08-22 at 21 20 02" src="https://user-images.githubusercontent.com/46469458/185950475-6b3c9a1e-24cd-4455-a05e-adf14f01f3bc.png">
 11. Create ACR done!!!
 <img width="1512" alt="Screen Shot 2565-08-22 at 21 20 39" src="https://user-images.githubusercontent.com/46469458/185950792-f779221a-5a1e-4e44-a7f1-c04a556328d8.png">
-12. First command to login to ACR. Please change <resource-group-name> to your resource group name from step 4.
+
+# Step to Create credential for docker login 
+
+1. Login to Azure portal 
+
+[Azure_Portal](https://azure.microsoft.com/en-us/get-started/azure-portal/)
+
+2. Select Azure cloud Shell
+<img width="1103" alt="Screen Shot 2565-08-23 at 20 35 17" src="https://user-images.githubusercontent.com/46469458/186177823-b282391b-3737-4e11-90ea-e1137378f0ef.png">
+
+3. Select Bash
+<img width="1322" alt="Screen Shot 2565-08-23 at 21 00 27" src="https://user-images.githubusercontent.com/46469458/186178298-8ddf771d-7d88-4dd7-9ee3-e5677a03d3c5.png">
+
+4. First command to login to ACR. Please change <resource-group-name> to your resource group name from step 4.
+ 
+ ```console
  groupId=$(az group show \
    --name <resource-group-name> \
    --query id --output tsv)
+ ```
 
-13. Second command to login to ACR.
+5. Second command to login to ACR.
+ 
+  ```console
  az ad sp create-for-rbac \
   --scope $groupId \
-  --role Contributor \
+  --role Contributor
+  ```
+ 
  <img width="586" alt="Screen Shot 2565-08-23 at 19 42 47" src="https://user-images.githubusercontent.com/46469458/186161467-25d265c0-9bb4-43bc-970a-298e67ee2c26.png">
-14. Third command to login to ACR. Please change <registry-name> to your registry name from step 5.
+
+6. Third command to login to ACR. Please change <registry-name> to your registry name from step 5.
+
+ ```console
  registryId=$(az acr show \
    --name <registry-name> \
    --query id --output tsv)
-15. Fourth command to login to ACR. Please change <ClientId> to your client id or app id from step 13. And please keep the result
+ ```
+ 
+7. Fourth command to login to ACR. Please change <ClientId> to your client id or app id from step 13. And please keep the result.
+
+  ```console
  az role assignment create \
   --assignee <ClientId> \
   --scope $registryId \
   --role AcrPush
+  ```
+ 
 <img width="1512" alt="Screen Shot 2565-08-23 at 20 04 07" src="https://user-images.githubusercontent.com/46469458/186165619-ac871267-2a51-4aed-bc55-60612e7e48c7.png">
-16. Create Github Repo 
-- In the GitHub UI, navigate to your forked repository and select Settings > Secrets > Actions.
-- Select New repository secret to add the following secrets:
-AZURE_CREDENTIALS	    The entire JSON output from the service principal creation step
-REGISTRY_LOGIN_SERVER	The login server name of your registry (all lowercase). Example: myregistry.azurecr.io
-REGISTRY_USERNAME	    The clientId from the JSON output from the service principal creation
-REGISTRY_PASSWORD	    The clientSecret from the JSON output from the service principal creation
-RESOURCE_GROUP	      The name of the resource group you used to scope the service principal
+ 
+8. Create Github Repo.
+
+ In the GitHub UI, navigate to your forked repository and select Settings > Secrets > Actions and Select New repository secret to add the following secrets:
+
+ <img width="736" alt="Screen Shot 2565-08-23 at 20 19 26" src="https://user-images.githubusercontent.com/46469458/186168669-1a6ac51f-7e9b-4016-ae4c-b0ead0282b86.png">
+
 
 Reference : https://docs.microsoft.com/en-us/azure/container-instances/container-instances-github-action
