@@ -45,7 +45,7 @@ Reference : https://docs.microsoft.com/en-us/azure/cloud-shell/overview
    --query id --output tsv)
  ```
 
-5. Second command to login to ACR.
+5. Second command to login to ACR. create the service principal (Copy JSON result from this step to create AZURE_CREDENTIALS please step 8.)
  
   ```console
  az ad sp create-for-rbac \
@@ -54,7 +54,7 @@ Reference : https://docs.microsoft.com/en-us/azure/cloud-shell/overview
   --sdk-auth
   ```
  
- <img width="586" alt="Screen Shot 2565-08-23 at 19 42 47" src="https://user-images.githubusercontent.com/46469458/186161467-25d265c0-9bb4-43bc-970a-298e67ee2c26.png">
+ <img width="761" alt="Screen Shot 2565-08-23 at 22 35 05" src="https://user-images.githubusercontent.com/46469458/186200948-9cfecd01-e02e-4fa1-a861-d2a8fb24e64c.png">
 
 6. Third command to login to ACR. Please change <registry-name> to your registry name from step 5.
 
