@@ -1,4 +1,4 @@
-#How to create Azure Container Registry (ACR)
+# How to create Azure Container Registry (ACR)
 1. Login Azure Portal by Microsoft Account 
 [Azure_Portal](https://azure.microsoft.com/en-us/get-started/azure-portal/)
 2. At search bar type "container registries" then click "Container registries"
