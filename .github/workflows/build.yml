@@ -4,15 +4,11 @@ on:
     branches:
       - main
 
-env:
-  ## Sets environment variable
-  OS: ubuntu-latest
-
 jobs:
 
   docker-login:
     name: Login
-    runs-on: ${{ env.OS }}
+    runs-on: ubuntu-latest
     steps:
       - name: 'Azure CLI Login'
         uses: azure/login@v1
