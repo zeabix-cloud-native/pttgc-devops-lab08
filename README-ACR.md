@@ -21,4 +21,33 @@ https://azure.microsoft.com/en-us/get-started/azure-portal/
 <img width="1512" alt="Screen Shot 2565-08-22 at 21 20 02" src="https://user-images.githubusercontent.com/46469458/185950475-6b3c9a1e-24cd-4455-a05e-adf14f01f3bc.png">
 11. Create ACR done!!!
 <img width="1512" alt="Screen Shot 2565-08-22 at 21 20 39" src="https://user-images.githubusercontent.com/46469458/185950792-f779221a-5a1e-4e44-a7f1-c04a556328d8.png">
-12. Login 
+12. First command to login to ACR. Please change <resource-group-name> to your resource group name from step 4.
+ groupId=$(az group show \
+   --name <resource-group-name> \
+   --query id --output tsv)
+
+13. Second command to login to ACR.
+ az ad sp create-for-rbac \
+  --scope $groupId \
+  --role Contributor \
+ <img width="586" alt="Screen Shot 2565-08-23 at 19 42 47" src="https://user-images.githubusercontent.com/46469458/186161467-25d265c0-9bb4-43bc-970a-298e67ee2c26.png">
+14. Third command to login to ACR. Please change <registry-name> to your registry name from step 5.
+ registryId=$(az acr show \
+   --name <registry-name> \
+   --query id --output tsv)
+15. Fourth command to login to ACR. Please change <ClientId> to your client id or app id from step 13. And please keep the result
+ az role assignment create \
+  --assignee <ClientId> \
+  --scope $registryId \
+  --role AcrPush
+<img width="1512" alt="Screen Shot 2565-08-23 at 20 04 07" src="https://user-images.githubusercontent.com/46469458/186165619-ac871267-2a51-4aed-bc55-60612e7e48c7.png">
+16. Create Github Repo 
+- In the GitHub UI, navigate to your forked repository and select Settings > Secrets > Actions.
+- Select New repository secret to add the following secrets:
+AZURE_CREDENTIALS	    The entire JSON output from the service principal creation step
+REGISTRY_LOGIN_SERVER	The login server name of your registry (all lowercase). Example: myregistry.azurecr.io
+REGISTRY_USERNAME	    The clientId from the JSON output from the service principal creation
+REGISTRY_PASSWORD	    The clientSecret from the JSON output from the service principal creation
+RESOURCE_GROUP	      The name of the resource group you used to scope the service principal
+
+Reference : https://docs.microsoft.com/en-us/azure/container-instances/container-instances-github-action
