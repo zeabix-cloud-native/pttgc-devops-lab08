@@ -6,7 +6,7 @@ on:
 
 env:
   ## Sets environment variable
-  OS: [ubuntu-latest]
+  OS: ubuntu-latest
 
 jobs:
 
@@ -15,13 +15,13 @@ jobs:
     runs-on: ${{env.OS}}
     steps:
       - name: 'Azure CLI Login'
-          uses: azure/login@v1
-          with:
-            creds: ${{ secrets.AZURE_CREDENTIALS }}
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
         
       - name: 'Docker Login'
-          uses: azure/docker-login@v1
-          with:
-            login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
-            username: ${{ secrets.REGISTRY_USERNAME }}
-            password: ${{ secrets.REGISTRY_PASSWORD }}
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
