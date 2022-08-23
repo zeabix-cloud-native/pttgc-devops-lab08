@@ -34,6 +34,9 @@
 3. Select Bash
 <img width="1322" alt="Screen Shot 2565-08-23 at 21 00 27" src="https://user-images.githubusercontent.com/46469458/186178298-8ddf771d-7d88-4dd7-9ee3-e5677a03d3c5.png">
 
+Reference : https://docs.microsoft.com/en-us/azure/cloud-shell/overview
+
+
 4. First command to login to ACR. Please change <resource-group-name> to your resource group name from step 4.
  
  ```console
