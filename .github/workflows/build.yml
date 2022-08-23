@@ -12,7 +12,7 @@ jobs:
 
   docker-login:
     name: Login
-    runs-on: ${{env.OS}}
+    runs-on: ${{ env.OS }}
     steps:
       - name: 'Azure CLI Login'
         uses: azure/login@v1
