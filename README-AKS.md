@@ -55,3 +55,9 @@
 11. When deployment success you will see this page
 
 <img width="1512" alt="Screen Shot 2565-08-24 at 15 52 00" src="https://user-images.githubusercontent.com/46469458/186375109-08604579-a675-4476-9777-59eb4af38394.png">
+
+# Step to connect to AKS
+
+1. Go to Kubernetes services and select your cluster then click connect and see step on the right
+
+<img width="1512" alt="Screen Shot 2565-08-24 at 16 29 27" src="https://user-images.githubusercontent.com/46469458/186384815-b094a64c-a0d9-4dcf-9c13-9920216e64fa.png">
