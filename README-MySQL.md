@@ -44,3 +44,13 @@
 10. After that when finished you will see this picture
 
 <img width="1512" alt="Screen Shot 2565-08-29 at 09 48 53" src="https://user-images.githubusercontent.com/46469458/187115468-af6e57c1-1b0e-48e1-9ad2-ace5f470c341.png">
+
+# Step to configure Network connection to Azure Database for MySQL servers
+
+1. When Azure Database for MySQL servers has been created click Connection security
+
+   - Firewall rules click + Add 0.0.0.0 - 255.255.255.255 then click continue
+   - Enforce SSL connection select DISABLED
+   - Click Save
+
+<img width="1410" alt="Screen Shot 2565-08-29 at 10 43 03" src="https://user-images.githubusercontent.com/46469458/187119588-5c3cbec3-4b57-4043-a211-8136c7133700.png">
