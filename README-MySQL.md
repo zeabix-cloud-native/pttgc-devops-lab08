@@ -53,4 +53,6 @@
    - Enforce SSL connection select DISABLED
    - Click Save
 
+# * This configuration is for the workshop only.  Do not apply to live/production environment.
+
 <img width="1410" alt="Screen Shot 2565-08-29 at 10 43 03" src="https://user-images.githubusercontent.com/46469458/187119588-5c3cbec3-4b57-4043-a211-8136c7133700.png">
