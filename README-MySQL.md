@@ -11,28 +11,33 @@
 
 <img width="1008" alt="Screen Shot 2565-08-29 at 09 32 49" src="https://user-images.githubusercontent.com/46469458/187115228-6fc546e6-7ed2-4070-bd48-fd79ee976e17.png">
 
-4. 
+4. At Basic tab
+
+   - Resoure group      : select your resource group
+   - Server name        : fill your mysql server name (This is your Endpoint connection)
+   - Location           : (Asis Pacific) East Asia
+   - Compute + storage  : select Configure server
 
 <img width="1512" alt="Screen Shot 2565-08-29 at 09 33 53" src="https://user-images.githubusercontent.com/46469458/187115297-94149f0f-3b85-4ed8-96c2-ae4febb4961c.png">
 <img width="1512" alt="Screen Shot 2565-08-29 at 09 34 50" src="https://user-images.githubusercontent.com/46469458/187115313-0316e82c-67c0-45ec-8123-cbdd00773dfa.png">
 
-5. 
+5. When click Configure server, configure your mysql server vCore and storage then click OK
 
 <img width="1512" alt="Screen Shot 2565-08-29 at 09 35 53" src="https://user-images.githubusercontent.com/46469458/187115330-c042305a-b9af-4566-bafc-4c7649c4eaf9.png">
 
-6.
+6. At Administrator account create your account to connect to your mysql server then click Next: Additional settings
 
 <img width="1512" alt="Screen Shot 2565-08-29 at 09 41 38" src="https://user-images.githubusercontent.com/46469458/187115389-2562f3de-7459-439d-9e52-0b541b40612d.png">
 
-7.
+7. At Additional settings tab click Next: Tags
 
 <img width="1512" alt="Screen Shot 2565-08-29 at 09 42 36" src="https://user-images.githubusercontent.com/46469458/187115420-770dd595-4035-4fe6-9e5b-7c6afd4f5076.png">
 
-8.
+8. At Tags tab click Next: Review + create
 
 <img width="1512" alt="Screen Shot 2565-08-29 at 09 43 06" src="https://user-images.githubusercontent.com/46469458/187115437-dd9221b6-3f24-48e4-8b24-2d5dd22bfdcc.png">
 
-9.
+9. You will see overall of your mysql server, click Create
 
 <img width="1512" alt="Screen Shot 2565-08-29 at 09 43 56" src="https://user-images.githubusercontent.com/46469458/187115444-d56ea4c9-6ff6-45f9-a921-4fb55a2951f9.png">
 
